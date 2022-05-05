@@ -8,7 +8,7 @@ from os import listdir
 from os.path import isfile, join
 
 #Path where images are saved (ie folder)
-path="/Users/giuseppeciccone/Desktop/test_images/" 
+path="/Users/giuseppeciccone/Desktop/Pos0/" 
 #Name of the sample imaged
 condition = "glass"
 
