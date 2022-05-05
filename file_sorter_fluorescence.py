@@ -39,7 +39,7 @@ for index, filename in enumerate(yap):
                 # rename all the files
                 os.rename(my_source, my_dest)
         
-#Renaming Dapis
+#Renaming Dapi
 for index, filename in enumerate(dapi): 
         if filename.endswith(".tif"):
                 my_dest =condition + "_Dapi" + str(index) + ".tif"
