@@ -11,6 +11,10 @@ from os.path import isfile, join
 path="/Users/giuseppeciccone/Desktop/Pos0/" 
 #Name of the sample imaged
 condition = "glass"
+#Name of channels
+channel_1 = "_Phalloidin"
+channel_2 = "_Yap"
+channel_3 = "_Dapi"
 
 #Ignore the following lines
 files  = [f for f in listdir(path) if isfile(join(path, f))]
@@ -22,7 +26,7 @@ dapi = files[2::3] #every thrird element starting from 2 is dapi
 #renaming Phall
 for index, filename in enumerate(phall): 
         if filename.endswith(".tif"):
-                my_dest = condition + "_Phalloidin" + str(index) + ".tif"
+                my_dest = condition + channel_1  + str(index) + ".tif"
                 my_source = path + filename
                 my_dest = path + my_dest
                 # rename() function will
@@ -32,7 +36,7 @@ for index, filename in enumerate(phall):
 #Renaming Yap
 for index, filename in enumerate(yap): 
         if filename.endswith(".tif"):
-                my_dest =condition + "_Yap" + str(index) + ".tif"
+                my_dest =condition + channel_2 + str(index) + ".tif"
                 my_source = path + filename
                 my_dest =path + my_dest
                 # rename() function will
@@ -42,9 +46,10 @@ for index, filename in enumerate(yap):
 #Renaming Dapi
 for index, filename in enumerate(dapi): 
         if filename.endswith(".tif"):
-                my_dest =condition + "_Dapi" + str(index) + ".tif"
+                my_dest =condition + channel_3 + str(index) + ".tif"
                 my_source = path + filename
                 my_dest =path + my_dest
                 # rename() function will
                 # rename all the files
                 os.rename(my_source, my_dest)
+
